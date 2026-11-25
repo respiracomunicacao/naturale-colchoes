@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF8F8;
+    color: #1E293B;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-gradient-naturale {
+    background: linear-gradient(135deg, #6B9DD3 0%, #B96E75 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-naturale {
+    background: linear-gradient(135deg, #6B9DD3 0%, #DF9598 55%, #B96E75 100%);
+  }
+
+  .bg-gradient-soft {
+    background: linear-gradient(180deg, #FAF8F8 0%, #EAF2FA 50%, #FDF2F3 100%);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
