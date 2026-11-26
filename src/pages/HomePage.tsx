@@ -503,6 +503,21 @@ export const HomePage: React.FC = () => {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* CTA para falar com o especialista premiado na cor vermelha/marsala institucional */}
+          <div className="mt-12 text-center">
+            <a
+              href={getWhatsAppLink(
+                "Olá! Gostaria de falar com o especialista premiado da Naturale Colchões para saber mais sobre os colchões Eko'7®."
+              )}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-naturale-marsala hover:bg-naturale-marsala-dark text-white font-extrabold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Falar com o especialista premiado
+            </a>
+          </div>
         </div>
 
         {/* Modal de Zoom da Foto em Alta Resolução */}
