@@ -473,19 +473,16 @@ export const HomePage: React.FC = () => {
                   onClick={() => setSelectedAwardPhoto(item)}
                   className="group cursor-pointer rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 p-3.5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col justify-between"
                 >
-                  {/* Photo Container com aspect-[4/5] e object-cover object-top para enquadramento perfeito das pessoas e troféu */}
-                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-900/20 flex items-center justify-center">
+                  {/* Photo Container com aspect-[4/5] perfeitamente alinhado */}
+                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
                     <img
                       src={item.image}
                       alt={item.title}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = './images/instagram-2.jpg';
-                      }}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-30 group-hover:opacity-10 transition-opacity" />
 
-                    <span className="absolute bottom-3 right-3 p-2 rounded-full bg-white/25 hover:bg-white/40 text-white backdrop-blur-md transition-colors">
+                    <span className="absolute bottom-3 right-3 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md transition-colors">
                       <ExternalLink className="w-4 h-4" />
                     </span>
                   </div>
@@ -495,7 +492,7 @@ export const HomePage: React.FC = () => {
                     <h3 className="text-base font-extrabold text-white">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-white/85 mt-0.5 font-medium">
+                    <p className="text-xs text-white/90 mt-0.5 font-medium">
                       {item.subtitle}
                     </p>
                   </div>
@@ -528,7 +525,7 @@ export const HomePage: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedAwardPhoto(null)}
-              className="fixed inset-0 z-[75] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4"
+              className="fixed inset-0 z-[75] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
             >
               <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
@@ -536,20 +533,21 @@ export const HomePage: React.FC = () => {
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative"
+                className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative flex flex-col"
               >
                 <button
                   onClick={() => setSelectedAwardPhoto(null)}
-                  className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white transition-colors"
+                  className="absolute top-3 right-3 z-30 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white transition-colors"
+                  aria-label="Fechar"
                 >
                   <X className="w-5 h-5" />
                 </button>
 
-                <div className="relative aspect-[4/5] max-h-[70vh] bg-slate-900 flex items-center justify-center">
+                <div className="relative aspect-[4/5] w-full bg-slate-100 overflow-hidden flex items-center justify-center">
                   <img
                     src={selectedAwardPhoto.image}
                     alt={selectedAwardPhoto.title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
