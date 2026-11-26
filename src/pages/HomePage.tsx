@@ -456,10 +456,6 @@ export const HomePage: React.FC = () => {
               />
             </div>
 
-            <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/90">
-              PARCEIRO OFICIAL • PREMIAÇÃO INTERNACIONAL
-            </p>
-
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Top 7 Internacional Eko&apos;7® — 3º Lugar
             </h2>
