@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { BlurReveal } from './MotionPrimitives';
 import { getWhatsAppLink } from '../data/siteData';
 
@@ -14,52 +13,46 @@ interface ConversionBannerProps {
 }
 
 export const ConversionBanner: React.FC<ConversionBannerProps> = ({
-  title = 'Pronto para transformar a qualidade das suas noites?',
-  subtitle = 'Converse com um consultor do sono da Naturale Colchões e descubra o modelo Eko7 ideal para o seu biotipo e saúde da coluna.',
-  ctaLabel = 'Falar com um Especialista',
-  secondaryLabel = 'Ver Catálogo Eko7',
-  secondaryTo = '/produtos',
+  title = 'Tire suas dúvidas e descubra o colchão ideal para você',
+  ctaLabel = 'Fale com um especialista',
 }) => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <BlurReveal className="max-w-7xl mx-auto">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-naturale p-8 sm:p-12 lg:p-16 text-white shadow-xl">
-          {/* Decorative ambient circles */}
-          <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white/15 blur-2xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-naturale-slate/15 blur-2xl translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+    <section className="relative bg-naturale-blue text-white overflow-hidden">
+      {/* Subtle Naturale petal watermark on the right matching the mockup */}
+      <svg
+        viewBox="0 0 220 200"
+        fill="none"
+        aria-hidden="true"
+        className="absolute right-4 sm:right-12 bottom-0 h-40 sm:h-48 w-auto opacity-15 pointer-events-none select-none"
+      >
+        <circle cx="110" cy="42" r="20" fill="white" />
+        <path
+          d="M110 170C70 140 35 105 42 72C48 45 84 48 110 88C136 48 172 45 178 72C185 105 150 140 110 170Z"
+          fill="white"
+        />
+      </svg>
 
-          <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-xs font-bold tracking-wide uppercase mb-5">
-              <Sparkles className="w-3.5 h-3.5" />
-              Consultoria do Sono Gratuita
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
-              {title}
-            </h2>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-8">
-              {subtitle}
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <motion.a
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                href={getWhatsAppLink('Olá! Gostaria de agendar uma consultoria sobre os colchões Eko7.')}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-naturale-slate font-extrabold text-sm sm:text-base shadow-lg hover:bg-naturale-cream transition-colors"
-              >
-                <MessageCircle className="w-5 h-5 text-naturale-blue" />
-                {ctaLabel}
-              </motion.a>
-              <Link
-                to={secondaryTo}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-bold text-sm sm:text-base border border-white/30 transition-colors"
-              >
-                {secondaryLabel}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
+      <BlurReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+          <h2 className="text-2xl sm:text-3xl font-extrabold leading-snug text-center md:text-right max-w-md">
+            {title}
+          </h2>
+
+          <div className="hidden md:block w-px h-14 bg-white/35 shrink-0" />
+
+          <motion.a
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            href={getWhatsAppLink(
+              'Olá! Gostaria de tirar dúvidas e descobrir o colchão Eko7 ideal para mim.'
+            )}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white hover:bg-naturale-stone text-naturale-slate font-extrabold text-sm shadow-md transition-colors shrink-0"
+          >
+            <MessageCircle className="w-4 h-4 text-naturale-marsala" />
+            {ctaLabel}
+          </motion.a>
         </div>
       </BlurReveal>
     </section>

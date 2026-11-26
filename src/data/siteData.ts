@@ -55,7 +55,8 @@ export interface Testimonial {
   initials: string;
 }
 
-export const WHATSAPP_NUMBER = '5547999999999';
+export const WHATSAPP_NUMBER = '5551997795664';
+export const INSTAGRAM_URL = 'https://www.instagram.com/naturale_colchoes/';
 
 export function getWhatsAppLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -132,7 +133,7 @@ export const PRODUCTS: ProductItem[] = [
       'O ápice do conforto ortopédico aliado ao acabamento luxuoso e ao pacote completo de terapias integradas.',
     fullDesc:
       'Desenvolvido para quem não abre mão da máxima sofisticação e saúde postural. O Eko7 Diamante une multicamadas de densidade progressiva, perfilado tecnológico Nanoex, magnetoterapia, infravermelho longo e sistema de vibromassagem silenciosa com controle dedicado.',
-    image: './images/mattress-eko7.jpg',
+    image: './images/eko7-diamante.jpg',
     technologies: [
       'Densidade Progressiva',
       'Magnetoterapia',
@@ -162,7 +163,7 @@ export const PRODUCTS: ProductItem[] = [
       'Revestimento nobre em tecidos sofisticados, pillow robusto e suporte anatômico de alta resiliência.',
     fullDesc:
       'A Série Ouro Premium combina estética contemporânea em malhas nobres com o rigor ortopédico da Eko7. Oferece adaptação perfeita ao contorno do corpo sem perder a sustentação necessária para a saúde lombar.',
-    image: './images/hero-bedroom.jpg',
+    image: './images/eko7-articulado-ouro.png',
     technologies: [
       'Densidade Progressiva',
       'Magnetoterapia',
@@ -207,7 +208,7 @@ export const PRODUCTS: ProductItem[] = [
   },
   {
     id: 'eko7-news',
-    name: 'Eko7 News',
+    name: 'Eko7 Soft News',
     line: 'Linha Contemporânea',
     category: 'Colchões Terapêuticos',
     comfortLevel: 'Firme Ortopédico',
@@ -216,8 +217,8 @@ export const PRODUCTS: ProductItem[] = [
     shortDesc:
       'Laterais em fibras nobres de linho, malha respirável e espumas certificadas de fabricação própria.',
     fullDesc:
-      'Com visual clean e atemporal, o Eko7 News traz acabamento lateral refinado e estrutura ortopédica de alta durabilidade, ideal para quem busca suporte mais firme com toque acolhedor.',
-    image: './images/mattress-eko7.jpg',
+      'Com visual clean e atemporal, o Eko7 Soft News traz acabamento lateral refinado e estrutura ortopédica de alta durabilidade, ideal para quem busca suporte mais firme com toque acolhedor.',
+    image: './images/eko7-softnews.png',
     technologies: [
       'Densidade Progressiva',
       'Magnetoterapia',
@@ -402,7 +403,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Consultor do Sono & Ergonomia',
     department: 'Atendimento Showroom',
     bio: 'Especialista em avaliação postural e indicação de densidade progressiva para casais e clientes com queixas lombares.',
-    image: './images/showroom-naturale.jpg',
+    image: './images/team-1.jpg',
     initials: 'CS',
   },
   {
@@ -411,7 +412,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Especialista em Linha Eko7',
     department: 'Consultoria Personalizada',
     bio: 'Acompanha cada cliente na descoberta das tecnologias terapêuticas (magnetoterapia, infravermelho e vibromassagem).',
-    image: './images/sleep-wellness.jpg',
+    image: './images/team-2.jpg',
     initials: 'CE',
   },
   {
@@ -420,70 +421,70 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Relacionamento & Entrega Assistida',
     department: 'Experiência do Cliente',
     bio: 'Garante entrega agendada, montagem cuidadosa e acompanhamento da adaptação nos primeiros meses de uso.',
-    image: './images/hero-bedroom.jpg',
+    image: './images/team-3.jpg',
     initials: 'PV',
   },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: 'densidade-progressiva-lombar',
-    title: 'Como a densidade progressiva previne dores lombares crônicas',
-    category: 'Saúde da Coluna',
+    id: 'artigo-01',
+    title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    category: 'Categoria 01',
     readTime: '4 min de leitura',
     date: 'Novembro 2026',
     excerpt:
-      'Entenda por que colchões muito moles ou rígidos demais prejudicam o alinhamento vertebral e como o sistema de multicamadas resolve esse problema.',
-    image: './images/mattress-eko7.jpg',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: './images/blog-postura.jpg',
     content: [
-      'Passamos cerca de um terço de nossas vidas dormindo. Quando o colchão não oferece o suporte adequado, a musculatura paravertebral permanece contraída durante toda a madrugada tentando compensar o desalinhamento.',
-      'A tecnologia de Densidade Progressiva da Eko7 funciona por meio de camadas inteligentemente sobrepostas: a superfície acolhe as curvas naturais de ombros e quadris, enquanto o núcleo de sustentação mantém a coluna perfeitamente reta.',
-      'O resultado é a descompressão dos discos intervertebrais, melhora da circulação periférica e um despertar muito mais leve, sem rigidez matinal.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.',
     ],
   },
   {
-    id: 'magnetoterapia-infravermelho-ciencia',
-    title: 'Magnetoterapia e infravermelho longo: os benefícios para um sono reparador',
-    category: 'Tecnologias do Sono',
+    id: 'artigo-02',
+    title: 'Sed do eiusmod tempor incididunt ut labore et dolore',
+    category: 'Categoria 02',
     readTime: '5 min de leitura',
     date: 'Novembro 2026',
     excerpt:
-      'Descubra como as pastilhas bioenergéticas atuam em sinergia durante o repouso noturno para auxiliar no relaxamento muscular e bem-estar.',
-    image: './images/sleep-wellness.jpg',
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.',
+    image: './images/blog-tecnologia.jpg',
     content: [
-      'Os colchões terapêuticos modernos vão muito além de uma simples superfície para deitar. Eles integram recursos físicos que favorecem o relaxamento profundo do organismo.',
-      'O Infravermelho Longo emite ondas suaves semelhantes às do sol da manhã, auxiliando na microcirculação e no alívio da sensação de fadiga muscular após dias intensos.',
-      'Já os magnetos estrategicamente posicionados criam um campo magnético suave e contínuo. Importante: pessoas portadoras de marcapasso cardíaco devem consultar seu médico antes de utilizar produtos com magnetoterapia.',
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
     ],
   },
   {
-    id: 'guia-medidas-colchao',
-    title: 'Guia definitivo: como escolher o tamanho ideal (Casal, Queen ou King)',
-    category: 'Guia de Compras',
+    id: 'artigo-03',
+    title: 'Ut enim ad minim veniam quis nostrud exercitation',
+    category: 'Categoria 03',
     readTime: '3 min de leitura',
     date: 'Outubro 2026',
     excerpt:
-      'Veja as medidas exatas de cada padrão de colchão e saiba quanto espaço de circulação deixar ao redor da cama para um quarto harmonioso.',
-    image: './images/hero-bedroom.jpg',
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.',
+    image: './images/blog-medidas.jpg',
     content: [
-      'Escolher a medida correta do colchão impacta diretamente a liberdade de movimento durante a noite e a estética do dormitório.',
-      'As principais medidas padrão são: Solteiro (88x188 cm), Casal (138x188 cm), Queen Size (158x198 cm) e King Size (193x203 cm). Para um conforto ideal de circulação, recomenda-se manter pelo menos 60 cm livres nas laterais da cama.',
-      'Em nosso showroom da Naturale Colchões, nossos consultores ajudam você a harmonizar tamanho, altura da base box e cabeceira sob medida para o seu ambiente.',
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
+      'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
+      'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.',
     ],
   },
   {
-    id: 'sinais-trocar-colchao',
-    title: '5 sinais claros de que o seu colchão atual está prejudicando sua saúde',
-    category: 'Dicas de Postura',
+    id: 'artigo-04',
+    title: 'Duis aute irure dolor in reprehenderit in voluptate',
+    category: 'Categoria 04',
     readTime: '4 min de leitura',
     date: 'Outubro 2026',
     excerpt:
-      'Acordar cansado, sentir formigamento nos braços ou notar afundamentos visíveis são alertas importantes. Confira o checklist completo.',
-    image: './images/showroom-naturale.jpg',
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum curabitur pretium.',
+    image: './images/blog-sinais.jpg',
     content: [
-      'Muitas vezes nos acostumamos com noites mal dormidas sem perceber que o principal responsável está logo abaixo de nós: um colchão vencido ou inadequado ao nosso biotipo.',
-      'Os 5 principais sinais de alerta são: 1) Acordar com dor na lombar ou pescoço; 2) Virar-se excessivamente à procura de uma posição confortável; 3) Afundamentos visíveis na espuma; 4) Crises frequentes de rinite ao deitar; 5) Dormir melhor em camas de hotel do que na própria casa.',
-      'Se você se identificou com dois ou mais itens, agende uma avaliação gratuita com nossa equipe de consultores do sono.',
+      'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.',
+      'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.',
     ],
   },
 ];

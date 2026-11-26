@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -8,8 +8,8 @@ import { ScrollProgressBar } from './components/MotionPrimitives';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
-import { TeamPage } from './pages/TeamPage';
 import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
 import { ContactPage } from './pages/ContactPage';
 
 const ScrollToTop: React.FC = () => {
@@ -28,8 +28,10 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/a-naturale" element={<AboutPage />} />
         <Route path="/produtos" element={<ProductsPage />} />
-        <Route path="/equipe" element={<TeamPage />} />
+        <Route path="/representante" element={<Navigate to="/a-naturale" replace />} />
+        <Route path="/equipe" element={<Navigate to="/a-naturale" replace />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/contato" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
