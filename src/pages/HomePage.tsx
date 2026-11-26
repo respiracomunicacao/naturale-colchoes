@@ -49,61 +49,38 @@ const INSTAGRAM_POSTS = [
   },
 ];
 
-interface AwardItem {
+interface AwardPhoto {
   id: string;
   title: string;
-  badge: string;
-  year: string;
-  category: string;
-  description: string;
+  subtitle: string;
   image: string;
-  caption: string;
-  highlights: string[];
 }
 
-const AWARDS_LIST: AwardItem[] = [
+const AWARD_PHOTOS: AwardPhoto[] = [
   {
-    id: 'top-7-internacional',
-    title: 'Top 7 Internacional Eko\'7® — 3º Lugar',
-    badge: 'Premiação Máxima',
-    year: 'Convenção Oficial',
-    category: 'Excelência & Performance Global',
-    description:
-      'Consagração no palco internacional da Eko\'7® entre milhares de distribuidores autorizados, reconhecendo a Naturale Colchões como uma das 3 maiores referências em qualidade de atendimento e satisfação de clientes.',
+    id: 'entrega-palco',
+    title: 'Entrega do Troféu no Palco',
+    subtitle: 'Convenção Internacional Eko\'7®',
     image: './images/premio-palco-oficial.jpg',
-    caption: 'Momento da entrega do troféu Top 7 Internacional 3º Lugar no palco da Convenção Anual Eko\'7®.',
-    highlights: ['3º Lugar no ranking internacional Eko\'7®', 'Entrega solene pela diretoria da fábrica', 'Excelência comprovada em consultoria postural'],
   },
   {
-    id: 'trofeu-cristal-ouro',
-    title: 'Troféu Oficial de Reconhecimento Eko\'7®',
-    badge: 'Chancela de Fábrica',
-    year: 'Edição Especial',
-    category: 'Padrão Ouro de Representação',
-    description:
-      'Homenagem conferida aos representantes que alcançam o mais alto índice de fidelização, conformidade técnica com as tecnologias bioenergéticas e pós-venda humanizado.',
+    id: 'trofeu-detalhe',
+    title: 'Troféu Top 7 Internacional',
+    subtitle: '3º Lugar — Reconhecimento Oficial',
     image: './images/premio-trofeu-eko7.jpg',
-    caption: 'Troféu de cristal e ouro gravado com a distinção de Revendedor Autorizado de Alta Performance.',
-    highlights: ['Selo de conformidade técnica médica', 'Liderança em clientes satisfeitos', 'Atendimento direto com o especialista'],
   },
   {
-    id: 'convencao-oficial-stage',
-    title: 'Destaque em Consultoria e Saúde do Sono',
-    badge: 'Mérito Profissional',
-    year: 'Encontro Nacional',
-    category: 'Capacitação Técnica Contínua',
-    description:
-      'Participação de destaque e certificação no encontro anual dos especialistas do sono, trazendo diretamente da fábrica as mais recentes inovações científicas para Santa Cruz do Sul e região.',
+    id: 'convencao-stage',
+    title: 'Convenção Oficial Eko\'7®',
+    subtitle: 'Palco e Celebração dos Premiados',
     image: './images/premio-convencao-stage.jpg',
-    caption: 'Palco principal da Convenção Eko\'7® reunindo líderes do sono reparador de todo o país.',
-    highlights: ['Treinamento avançado em biomecânica', 'Acesso em primeira mão a novos lançamentos', 'Suporte exclusivo de fábrica para nossa região'],
   },
 ];
 
 export const HomePage: React.FC = () => {
   const [carouselPage, setCarouselPage] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Eko7Product | null>(null);
-  const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
+  const [selectedAwardPhoto, setSelectedAwardPhoto] = useState<AwardPhoto | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
 
   // 6 showcase items shown 3 at a time (real official Eko'7 models)
@@ -465,165 +442,115 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. PARCEIRO OFICIAL EKO'7® & DEMONSTRATIVO DE PRÊMIOS */}
-      <section className="py-20 lg:py-24 bg-gradient-to-b from-[#0F1E36] via-[#142646] to-[#0F1E36] text-white relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-naturale-blue/20 blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Top Header: Partner Badge + Logo + Intro */}
-          <BlurReveal className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-extrabold uppercase tracking-widest text-amber-300">
-              <Trophy className="w-3.5 h-3.5 text-amber-400" />
-              PARCEIRO OFICIAL EKO&apos;7® • RECONHECIMENTO &amp; PREMIAÇÕES
-            </div>
-
-            <div className="flex items-center justify-center gap-4 pt-2">
+      {/* 6. PARCEIRO OFICIAL EKO'7® — PREMIAÇÃO TOP 7 INTERNACIONAL */}
+      <section className="py-16 lg:py-20 bg-naturale-blue text-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header com Logo Eko'7 em destaque limpo e relato direto do prêmio */}
+          <BlurReveal className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+            {/* Logo Eko'7 oficial visível em branco puro */}
+            <div className="flex items-center justify-center gap-3">
               <img
                 src="./logos/eko7.svg"
                 alt="Eko'7 — Diga sim à vida"
-                className="h-11 sm:h-12 w-auto object-contain brightness-0 invert"
+                className="h-12 sm:h-14 w-auto object-contain drop-shadow-sm"
               />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-              Excelência Comprovada e Premiada Internacionalmente
+            <p className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-white/90">
+              PARCEIRO OFICIAL • PREMIAÇÃO INTERNACIONAL
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Top 7 Internacional Eko&apos;7® — 3º Lugar
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              Na Naturale Colchões, a nossa dedicação à saúde da sua coluna é respaldada pelo mais alto padrão da Eko&apos;7®. Conheça os prêmios e reconhecimentos que comprovam a nossa liderança e compromisso com o seu bem-estar.
+            <p className="text-sm sm:text-base text-white/95 leading-relaxed">
+              Reconhecimento oficial recebido na Convenção Internacional da Eko&apos;7®, consagrando a Naturale Colchões com o 3º lugar pelo compromisso e excelência no atendimento aos nossos clientes.
             </p>
           </BlurReveal>
 
-          {/* Awards Gallery Grid (3 cards com foto em destaque, badge, título, descrição e modal ao clicar) */}
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {AWARDS_LIST.map((award) => (
-              <StaggerItem key={award.id}>
+          {/* Galeria de Fotos dos Prêmios com Enquadramento Aperfeiçoado (sem cortes) */}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {AWARD_PHOTOS.map((item) => (
+              <StaggerItem key={item.id}>
                 <div
-                  onClick={() => setSelectedAward(award)}
-                  className="group cursor-pointer rounded-2xl bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 hover:border-amber-400/40 p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 backdrop-blur-sm h-full"
+                  onClick={() => setSelectedAwardPhoto(item)}
+                  className="group cursor-pointer rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 p-3.5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col justify-between"
                 >
-                  <div>
-                    {/* Image Container with overlay badge */}
-                    <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-800 mb-5">
-                      <img
-                        src={award.image}
-                        alt={award.title}
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = './images/instagram-2.jpg';
-                        }}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  {/* Photo Container com aspect-[4/5] e object-cover object-top para enquadramento perfeito das pessoas e troféu */}
+                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-900/20 flex items-center justify-center">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = './images/instagram-2.jpg';
+                      }}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
 
-                      <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-[11px] font-extrabold text-amber-300 shadow-md">
-                        <Award className="w-3.5 h-3.5 text-amber-400" />
-                        {award.badge}
-                      </span>
-
-                      <span className="absolute bottom-3 right-3 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white backdrop-blur-md transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
-                    </div>
-
-                    {/* Category & Title */}
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-amber-400 mb-1.5">
-                      {award.category} • {award.year}
-                    </p>
-                    <h3 className="text-xl font-extrabold text-white group-hover:text-amber-300 transition-colors leading-snug">
-                      {award.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mt-2.5">
-                      {award.description}
-                    </p>
+                    <span className="absolute bottom-3 right-3 p-2 rounded-full bg-white/25 hover:bg-white/40 text-white backdrop-blur-md transition-colors">
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
                   </div>
 
-                  {/* Highlights Bullet Tags */}
-                  <div className="mt-6 pt-4 border-t border-white/10 space-y-1.5">
-                    {award.highlights.map((h, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-200">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                        <span>{h}</span>
-                      </div>
-                    ))}
+                  {/* Legenda simples e direta */}
+                  <div className="pt-3 px-1 text-center">
+                    <h3 className="text-base font-extrabold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-white/85 mt-0.5 font-medium">
+                      {item.subtitle}
+                    </p>
                   </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
-
-          {/* Bottom Trust Strip */}
-          <BlurReveal delay={0.2} className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-300">
-            <div className="flex items-center gap-3 text-center sm:text-left">
-              <div className="w-10 h-10 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0">
-                <Trophy className="w-5 h-5 text-amber-400" />
-              </div>
-              <div>
-                <p className="font-extrabold text-white text-sm">Garantia e Autenticidade Eko&apos;7®</p>
-                <p className="text-slate-400">Atendimento oficial conduzido diretamente pelo representante autorizado premiado.</p>
-              </div>
-            </div>
-
-            <a
-              href={getWhatsAppLink('Olá! Gostaria de conversar com o representante oficial premiado da Naturale Colchões.')}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg transition-all"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Falar com o Especialista Premiado
-            </a>
-          </BlurReveal>
         </div>
 
-        {/* Modal da Foto do Prêmio em Alta Resolução */}
+        {/* Modal de Zoom da Foto em Alta Resolução */}
         <AnimatePresence>
-          {selectedAward && (
+          {selectedAwardPhoto && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedAward(null)}
+              onClick={() => setSelectedAwardPhoto(null)}
               className="fixed inset-0 z-[75] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4"
             >
               <motion.div
-                initial={{ scale: 0.94, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.94, opacity: 0 }}
+                exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative"
+                className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative"
               >
                 <button
-                  onClick={() => setSelectedAward(null)}
-                  className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white transition-colors"
+                  onClick={() => setSelectedAwardPhoto(null)}
+                  className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
 
-                <div className="relative aspect-[16/10] bg-black">
+                <div className="relative aspect-[4/5] max-h-[70vh] bg-slate-900 flex items-center justify-center">
                   <img
-                    src={selectedAward.image}
-                    alt={selectedAward.title}
+                    src={selectedAwardPhoto.image}
+                    alt={selectedAwardPhoto.title}
                     className="w-full h-full object-contain"
                   />
                 </div>
 
-                <div className="p-6 sm:p-8 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest">
-                    <Trophy className="w-4 h-4 text-amber-400" />
-                    {selectedAward.badge} • {selectedAward.year}
-                  </div>
-                  <h3 className="text-2xl font-black text-white">
-                    {selectedAward.title}
+                <div className="p-6 text-center bg-white space-y-1">
+                  <h3 className="text-xl font-extrabold text-naturale-slate">
+                    {selectedAwardPhoto.title}
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed">
-                    {selectedAward.description}
+                  <p className="text-sm font-semibold text-naturale-marsala">
+                    {selectedAwardPhoto.subtitle}
                   </p>
-                  <p className="text-xs text-slate-400 italic pt-1">
-                    {selectedAward.caption}
+                  <p className="text-xs text-naturale-muted pt-1">
+                    Premiação oficial recebida na Convenção Internacional Eko&apos;7®
                   </p>
                 </div>
               </motion.div>
